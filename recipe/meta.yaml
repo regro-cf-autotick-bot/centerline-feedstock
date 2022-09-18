@@ -1,5 +1,5 @@
 {% set name = "centerline" %}
-{% set version = "0.6.3" %}
+{% set version = "0.6.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/centerline-{{ version }}.tar.gz
-  sha256: 303cf58861d9271d9544db1ada06be1172cb73d3e2ad3326ffaaceb34be0ceef
+  sha256: ff8c98a35808b5afd2d1db405bc6aaa787c4f7a2da125538ec6cb4f13d8e774d
 
 build:
   entry_points:
