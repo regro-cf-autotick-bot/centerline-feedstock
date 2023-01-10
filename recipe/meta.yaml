@@ -14,7 +14,7 @@ build:
     - create_centerlines = centerline.converters:create_centerlines
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
