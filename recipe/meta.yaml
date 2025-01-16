@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/centerline-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/centerline-{{ version }}.tar.gz
   sha256: a7d804a2acbac32f837c3ba60ae3d433eb68d9f1f2cbb7d9614a99fabe500e2e
 
 build:
@@ -14,18 +14,18 @@ build:
     - create_centerlines = centerline.converters:create_centerlines
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - certifi
     - click >=7.0
     - fiona >=1.7.0
     - numpy >=1.10.4
-    - python >=3.6
+    - python >={{ python_min }}
     - scipy >=0.16.1
     - shapely >=1.5.13
 
@@ -37,6 +37,7 @@ test:
     - create_centerlines --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fitodic/centerline
